@@ -1,0 +1,61 @@
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: arial;
+}
+.container .fab{
+	color: blue;
+	font-size: 80px;
+}
+.notify::before {
+	content: attr(data-count);
+	position: absolute;
+	top: 0px;
+    right: -3px;
+    font-size: 30px;
+    font-weight: 700;
+    color: white;
+    z-index: 1;
+    opacity: 0;
+    padding: 5px 12px;
+    line-height: 100%;
+    border-radius: 60px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(#ff1a1a,#ff0000,#e60000);
+    transition: opacity 0.1s ease-out;
+    animation: animate .9s ease-out infinite alternate;
+}
+.container .btn{
+	position: absolute;
+	left: -25px;
+	top: 100px;
+	height: 40px;
+	width: 120px;
+	color: white;
+	font-size: 15px;
+	font-weight: bold;
+	border: 1px solid #111755;
+	background: #1A237E;
+	border-radius: 3px;
+	line-height: 40px;
+	cursor: pointer;
+	outline: none;
+	transition: .5s;
+}
+.container .btn:hover{
+	background: #161d6a;
+}
+@keyframes animate{
+	0%{
+		transform: scale(1);
+	}
+	100%{
+		transform: scale(1.09);
+	}
+}
+.notify.add-numb::before{
+    opacity: 1;
+}
